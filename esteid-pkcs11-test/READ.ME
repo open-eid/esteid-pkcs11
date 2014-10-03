@@ -1,0 +1,11 @@
+#loeme välja serdi
+pkcs15-tool -r 01 -o mariliis.pem
+
+#võtame serdist avaliku võtme
+openssl x509 -pubkey -noout -in mariliis.pem >mariliis.pub
+
+#krüpteerib teksti
+echo -n "Hello World" | openssl rsautl -encrypt -pubin -inkey mariliis.pub |xxd -p
+
+#allkirja tekitame pluginaga. hashile, mida allkirjastatakse pannakse plugina poolt vastava algoritmi põhine hash veel ette
+# 3021300906052B0E03021A05000414 ja FAFA0101FAFA0101FAFA0101FAFA0101FAFA0101 pannakse siis kokku

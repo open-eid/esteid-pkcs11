@@ -1,0 +1,3534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		01BA4BF35414461C88857294 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DFAC0A323D8145689FEFA633 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+			);
+			dependencies = (
+				4DF38B9FA4AF4F6AA1C71440 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		195BA6FC8AFC414FA2E6CD0B /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4C4EAFF4D0034FF39ABCAF49 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		83F1B7D20E0341A998442296 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5CE5A2556C5A484C9E4AC5DD /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+			);
+			dependencies = (
+				57ED3B15354144E9804FDEAF /* PBXTargetDependency */,
+				CDAFCDEAE97547289186D6E3 /* PBXTargetDependency */,
+				A9D8D435E8B14AABAB005B58 /* PBXTargetDependency */,
+				192D2A04879641BB96F812E4 /* PBXTargetDependency */,
+				C8CCB3FC57A54719A10BFCBA /* PBXTargetDependency */,
+				0E83F81C795D4D5DA566635C /* PBXTargetDependency */,
+				17CC2560FF2144FF99FB3E9E /* PBXTargetDependency */,
+				B5929F8310EF4DD3982AB98F /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		C0FD2491353B4F09B89195C4 /* RUN_TESTS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D94396DE8E0F4F1BB18865BF /* Build configuration list for PBXAggregateTarget "RUN_TESTS" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = RUN_TESTS;
+			productName = RUN_TESTS;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		13DF2BC289BD400ABEA7D183 /* PKCS11Context_C_GetInfo_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23C8FAE1F02249829C1ADC8D /* PKCS11Context_C_GetInfo_Test.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		14299BB5A5024639B0130592 /* gtest-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 46AE00908E094A0AA5EE83C5 /* gtest-all.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+		183CFD9C6C18494AADADD08F /* gmock_main.cc in Sources */ = {isa = PBXBuildFile; fileRef = BE2B9405B17D4CA8A75A4A8A /* gmock_main.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+		189433F57AD8492D885AAA57 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4395B06F9C5B4862AF765109 /* Logger.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		1AE9661982CE427592693FA9 /* asnObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1694D185A0B342DB9677F701 /* asnObject.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		233095527A264621A125A4CB /* esteidpkcs11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F79217AD0DD42C4BE2FA0FF /* esteidpkcs11.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		2824288C1E0045018AC56A80 /* CardBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAF833D603FE4DF48BEC9D56 /* CardBase.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		34268C4A67664511B0449689 /* PCSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D05A1EC064674B3CBDDD0107 /* PCSCManager.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		355C25A1B8657382D77DD1D6 /* PKCS11Context_C_GetSlotInfo_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 355C25B79900415C14A3783F /* PKCS11Context_C_GetSlotInfo_Test.cpp */; };
+		3AE107DC5ADF4D7F87B55F25 /* EstEIDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D45DBCC3F4B4379BC562216 /* EstEIDManager.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		3DB2269811E64A39B9A2BD3B /* esteidpkcs11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F79217AD0DD42C4BE2FA0FF /* esteidpkcs11.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		3E3968EE554C413CB3CAD23F /* precompiled.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36A55DB72DC847CDA2F9E47A /* precompiled.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		441CB456D4A04F13B5D81041 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C259BC913A6D4D48BFFAE569 /* types.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		4E406C7F329D4EC198E13462 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8617B5951DC642148300C054 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		546A1F57A93E4567923A4EDC /* asnCertificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B761138D83460AAC9F2684 /* asnCertificate.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		54D20D01B9B541E8AFF8ADC4 /* asnCertificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B761138D83460AAC9F2684 /* asnCertificate.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5D7A5F6DE3F741E5BB8779BA /* gtest-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 46AE00908E094A0AA5EE83C5 /* gtest-all.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+		62315ADC49454B878E0F77AD /* gmock-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 2A21875ABA4C4E688437B843 /* gmock-all.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+		784C85E41CC6473DAE2ABD44 /* SCError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B68C08E5D3E453AB415C909 /* SCError.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		7E8D219FC71848FDA59EA3F0 /* PKCS11Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22DD0B10EFE34E95B9923238 /* PKCS11Context.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		88384813D86A4DBCAE5FA665 /* EstEID_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB7E49B10A40209CBB9B8E /* EstEID_utility.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		989FB691C40B4280B58A8507 /* PKCS11Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22DD0B10EFE34E95B9923238 /* PKCS11Context.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		A16BAEE20B444E97B4E985F2 /* PKCS11Context_C_GetSlotList_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F309CDFC97EE4A6E8AF41CAC /* PKCS11Context_C_GetSlotList_Test.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		A78B12A175EE4484A67D14DE /* gmock-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 2A21875ABA4C4E688437B843 /* gmock-all.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+		B029D8C4D537441BA5FC4E3F /* locked_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3162A1BF6C145B0B8F449C4 /* locked_allocator.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		BDE503E02AA6422495E9E514 /* asnObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1694D185A0B342DB9677F701 /* asnObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C2F3523018511BC1007AC3BE /* esteid-unit-test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 355C22FD159F6B88F57C6E2A /* esteid-unit-test.cpp */; };
+		C3B2FB03BE0B44828F6B7A2A /* precompiled.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36A55DB72DC847CDA2F9E47A /* precompiled.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		CFF3C648D89B4CD9AEC930DF /* EstEID_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB7E49B10A40209CBB9B8E /* EstEID_utility.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		D287C38394304A5BB926FFAA /* SCardLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 961C4B9E5B13411F9D740464 /* SCardLog.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		D46D3EAB2EC949A5A23FA215 /* gtest_main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF2AFA7084E26B61CA550 /* gtest_main.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+		E60E4EE7FED74FD289F06E24 /* LoggerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E8C2C8FA19B4070ABE62D00 /* LoggerTest.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		E7B772D0F3264F34BCAE101A /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4395B06F9C5B4862AF765109 /* Logger.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		EF8004C31CAE4F52FFBC5933 /* PKCS11Context_C_DecryptInit_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8408CD6DFAB5DAA6778000 /* PKCS11Context_C_DecryptInit_Test.cpp */; };
+		EF8088EAA6899E7250616CA2 /* OnePinPKCS11Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF89B8CB5498047CA075747F /* OnePinPKCS11Context.cpp */; };
+		EF80CD3C2EB5185601AF53B1 /* C_GetInfo_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B6668FBADE2A0B6D50E61 /* C_GetInfo_Test.cpp */; };
+		EF8199D4DD26E8EEB8D30E3E /* OnePinPKCS11Context_C_GetSlotInfo_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8C86C0012A8CDBFF089C6B /* OnePinPKCS11Context_C_GetSlotInfo_Test.cpp */; };
+		EF81C1B63BFB8FA2A23DA7DC /* PKCS11Context_C_Decrypt_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF823B42A5865185093A0FD1 /* PKCS11Context_C_Decrypt_Test.cpp */; };
+		EF81EAB222E5D2548E2E1C1A /* PKCS11Context_C_GetMechanismInfo_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF866B7C100A6DF5FA1B8C24 /* PKCS11Context_C_GetMechanismInfo_Test.cpp */; };
+		EF84D09A6B83DFD7F4191304 /* PKCS11Context_C_InitToken_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B8F0FC873BFC505E9FDE7 /* PKCS11Context_C_InitToken_Test.cpp */; };
+		EF8597A1C46757EC74C4D2B8 /* PKCS11Context_C_OpenSession_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8C861880C1B1B6CD5123B0 /* PKCS11Context_C_OpenSession_Test.cpp */; };
+		EF85D7B4CF6484F3B7FCCF1E /* esteid-pkcs11-test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF811AA84C6DC0CBAF033DB7 /* esteid-pkcs11-test.cpp */; };
+		EF87DE27F5908213A1CFFBB8 /* PKCS11Context_C_SignFinal_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B5A89FA32CF3C10A63E7A /* PKCS11Context_C_SignFinal_Test.cpp */; };
+		EF899D058864C584D0CE4D92 /* PKCS11Context_C_GetTokenInfo_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8F8DFA30142C4A86367DE2 /* PKCS11Context_C_GetTokenInfo_Test.cpp */; };
+		EF8B4961BE6D17B4B712B3D4 /* PKCS11Context_C_SignInit_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8FFCB7BFED6A0D143E2344 /* PKCS11Context_C_SignInit_Test.cpp */; };
+		EF8C538BC3A27224075CD139 /* OnePinPKCS11Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF89B8CB5498047CA075747F /* OnePinPKCS11Context.cpp */; };
+		EF8E9269F732655008BCD975 /* OnePinPKCS11Context_C_GetSlotList_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8830A1AE8AAB55F9873EC9 /* OnePinPKCS11Context_C_GetSlotList_Test.cpp */; };
+		F0D26BEF91CB42CFAAE33439 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424897663B174CBB8B0889A3 /* md5.cpp */; settings = {COMPILER_FLAGS = "-fPIC"; }; };
+		F644A834184F5A7400E9C301 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F644A833184F5A7400E9C301 /* main.cpp */; };
+		F644A8441851FF7800E9C301 /* PKCS11Context_C_GetMechanismList_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8ED47A7F64EFF80E5D56CE /* PKCS11Context_C_GetMechanismList_Test.cpp */; };
+		F6567670185A06880094202C /* PKCS11Context_C_Login_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F656766F185A06880094202C /* PKCS11Context_C_Login_Test.cpp */; };
+		F6567671185EF9E10094202C /* PKCS11Context_C_Sign_Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF810901DBEC40180E4446C2 /* PKCS11Context_C_Sign_Test.cpp */; };
+		FF199A48E9A74314AA96DCCC /* gtest-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 46AE00908E094A0AA5EE83C5 /* gtest-all.cc */; settings = {COMPILER_FLAGS = " -std=c++11 -Wno-c++11-narrowing -stdlib=libc++  -DGTEST_HAS_PTHREAD=1  "; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13A380C084ED43C3AE779179 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C71FB1E850444BF69B9E4051;
+			remoteInfo = gmock_main;
+		};
+		16B50D428A4F4BC9A0DE5698 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 195BA6FC8AFC414FA2E6CD0B;
+			remoteInfo = ZERO_CHECK;
+		};
+		1E0D0E785CD64B8289512934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CBAAAD668134D558620F000;
+			remoteInfo = gtest_main;
+		};
+		346F2779713B4D02A7BB3CCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03D10BC4E2754599A00F781F;
+			remoteInfo = runUnitTests;
+		};
+		3B23F270204545D68ADA2C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DA0BAA541B3440CA6D61817;
+			remoteInfo = smartcardpp;
+		};
+		3D252BFFF6374FF68705B4E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 195BA6FC8AFC414FA2E6CD0B;
+			remoteInfo = ZERO_CHECK;
+		};
+		42421C4BB28342C58F8A2F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A2E17D62CD54314B649E088;
+			remoteInfo = gmock;
+		};
+		453223AED1E94733914FA77B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F461C831ECF41F7AF02E8A1;
+			remoteInfo = "esteid-pkcs11";
+		};
+		458F8F3335E84750A88BAEE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83F1B7D20E0341A998442296;
+			remoteInfo = ALL_BUILD;
+		};
+		6EDA0243057F4DC78B8F13B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A2E17D62CD54314B649E088;
+			remoteInfo = gmock;
+		};
+		75D1C6381920429CB2063487 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DA0BAA541B3440CA6D61817;
+			remoteInfo = smartcardpp;
+		};
+		844472C7C4E64E00A06D1EB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B4D0DA83E847668B2BECFB;
+			remoteInfo = gtest;
+		};
+		9AF63EC8A6B04427ABF815CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C71FB1E850444BF69B9E4051;
+			remoteInfo = gmock_main;
+		};
+		9FDFA2507E6F4640999B2616 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B4D0DA83E847668B2BECFB;
+			remoteInfo = gtest;
+		};
+		A8B1D58DEAB640D48676D8F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 195BA6FC8AFC414FA2E6CD0B;
+			remoteInfo = ZERO_CHECK;
+		};
+		B4D14C5600CD42A59AFF02E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DA0BAA541B3440CA6D61817;
+			remoteInfo = smartcardpp;
+		};
+		F644A83C185061F800E9C301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A2E17D62CD54314B649E088;
+			remoteInfo = gmock;
+		};
+		F644A83E185061F800E9C301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C71FB1E850444BF69B9E4051;
+			remoteInfo = gmock_main;
+		};
+		F644A8421850630F00E9C301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F38191031B41739DAF1FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F461C831ECF41F7AF02E8A1;
+			remoteInfo = "esteid-pkcs11";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F644A82F184F5A7400E9C301 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		12E37F5F34B7469E828314E9 /* esteidpkcs11.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; path = esteidpkcs11.rc; sourceTree = SOURCE_ROOT; };
+		1694D185A0B342DB9677F701 /* asnObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asnObject.cpp; path = utility/asnObject.cpp; sourceTree = SOURCE_ROOT; };
+		22DD0B10EFE34E95B9923238 /* PKCS11Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKCS11Context.cpp; sourceTree = SOURCE_ROOT; };
+		23C8FAE1F02249829C1ADC8D /* PKCS11Context_C_GetInfo_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_GetInfo_Test.cpp; path = "unit tests/PKCS11Context_C_GetInfo_Test.cpp"; sourceTree = SOURCE_ROOT; };
+		2A21875ABA4C4E688437B843 /* gmock-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "gmock-all.cc"; path = "googlemock/src/gmock-all.cc"; sourceTree = SOURCE_ROOT; };
+		355C22FD159F6B88F57C6E2A /* esteid-unit-test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "esteid-unit-test.cpp"; path = "unit tests/esteid-unit-test.cpp"; sourceTree = "<group>"; };
+		355C25B79900415C14A3783F /* PKCS11Context_C_GetSlotInfo_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_GetSlotInfo_Test.cpp; path = "unit tests/PKCS11Context_C_GetSlotInfo_Test.cpp"; sourceTree = "<group>"; };
+		355C2D70BF183EF23261B1AF /* esteid-unit-test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "esteid-unit-test.h"; path = "unit tests/esteid-unit-test.h"; sourceTree = "<group>"; };
+		36A55DB72DC847CDA2F9E47A /* precompiled.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = precompiled.cpp; sourceTree = SOURCE_ROOT; };
+		424897663B174CBB8B0889A3 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = md5.cpp; path = smartcardpp/md5.cpp; sourceTree = SOURCE_ROOT; };
+		4395B06F9C5B4862AF765109 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = SOURCE_ROOT; };
+		46AE00908E094A0AA5EE83C5 /* gtest-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "gtest-all.cc"; path = "googlemock/gtest/src/gtest-all.cc"; sourceTree = SOURCE_ROOT; };
+		49FB9638B5B54A82A489023A /* libgtest_main.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtest_main.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D76D7F82C5746699D873AC2 /* libsmartcardpp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libsmartcardpp.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F79217AD0DD42C4BE2FA0FF /* esteidpkcs11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = esteidpkcs11.cpp; sourceTree = SOURCE_ROOT; };
+		573C8FE0942146C2A5F944DF /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5B68C08E5D3E453AB415C909 /* SCError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SCError.cpp; path = smartcardpp/SCError.cpp; sourceTree = SOURCE_ROOT; };
+		5C4AA0C0AA344AC5B0E06EC0 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; name = CMakeLists.txt; path = smartcardpp/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		64B761138D83460AAC9F2684 /* asnCertificate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asnCertificate.cpp; path = utility/asnCertificate.cpp; sourceTree = SOURCE_ROOT; };
+		6D45DBCC3F4B4379BC562216 /* EstEIDManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EstEIDManager.cpp; path = smartcardpp/EstEIDManager.cpp; sourceTree = SOURCE_ROOT; };
+		6E8C2C8FA19B4070ABE62D00 /* LoggerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoggerTest.cpp; path = "unit tests/LoggerTest.cpp"; sourceTree = SOURCE_ROOT; };
+		7296158E18B14C4791B6FFB8 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; name = CMakeLists.txt; path = googlemock/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8617B5951DC642148300C054 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "unit tests/main.cpp"; sourceTree = SOURCE_ROOT; };
+		961C4B9E5B13411F9D740464 /* SCardLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SCardLog.cpp; path = smartcardpp/SCardLog.cpp; sourceTree = SOURCE_ROOT; };
+		9FFB7E49B10A40209CBB9B8E /* EstEID_utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EstEID_utility.cpp; path = utility/EstEID_utility.cpp; sourceTree = SOURCE_ROOT; };
+		A114670E38024618AA15DF9B /* runUnitTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = runUnitTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4684EAC4CEF4D0F91002EEC /* esteid-pkcs11.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "esteid-pkcs11.so"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAF833D603FE4DF48BEC9D56 /* CardBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CardBase.cpp; path = smartcardpp/CardBase.cpp; sourceTree = SOURCE_ROOT; };
+		BE2B9405B17D4CA8A75A4A8A /* gmock_main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gmock_main.cc; path = googlemock/src/gmock_main.cc; sourceTree = SOURCE_ROOT; };
+		C259BC913A6D4D48BFFAE569 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = types.cpp; path = smartcardpp/types.cpp; sourceTree = SOURCE_ROOT; };
+		C45F314117DE45E9BC8D5F5C /* libgmock_main.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgmock_main.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D05A1EC064674B3CBDDD0107 /* PCSCManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PCSCManager.cpp; path = smartcardpp/PCSCManager.cpp; sourceTree = SOURCE_ROOT; };
+		D2AC582024F94776B4E8ECC6 /* libgmock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgmock.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3053FBDFFDC4E2E84662ED6 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; name = CMakeLists.txt; path = googlemock/gtest/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E3162A1BF6C145B0B8F449C4 /* locked_allocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = locked_allocator.cpp; path = smartcardpp/locked_allocator.cpp; sourceTree = SOURCE_ROOT; };
+		E9EEF2AFA7084E26B61CA550 /* gtest_main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gtest_main.cc; path = googlemock/gtest/src/gtest_main.cc; sourceTree = SOURCE_ROOT; };
+		EF801FDA925B81A93FDA8E46 /* esteid-pkcs11-test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "esteid-pkcs11-test.h"; sourceTree = "<group>"; };
+		EF810901DBEC40180E4446C2 /* PKCS11Context_C_Sign_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_Sign_Test.cpp; path = "unit tests/PKCS11Context_C_Sign_Test.cpp"; sourceTree = "<group>"; };
+		EF811AA84C6DC0CBAF033DB7 /* esteid-pkcs11-test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "esteid-pkcs11-test.cpp"; sourceTree = "<group>"; };
+		EF8135B8E36F9622D37F51B0 /* OnePinPKCS11Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePinPKCS11Context.h; sourceTree = "<group>"; };
+		EF823B42A5865185093A0FD1 /* PKCS11Context_C_Decrypt_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_Decrypt_Test.cpp; path = "unit tests/PKCS11Context_C_Decrypt_Test.cpp"; sourceTree = "<group>"; };
+		EF831D187DDA02AFF86EB527 /* mariliis_AS3500006.cfg */ = {isa = PBXFileReference; lastKnownFileType = file.cfg; path = mariliis_AS3500006.cfg; sourceTree = "<group>"; };
+		EF8394C4FE7E2A1DF6D1B8BF /* run_parallel.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run_parallel.sh; sourceTree = "<group>"; };
+		EF8408CD6DFAB5DAA6778000 /* PKCS11Context_C_DecryptInit_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_DecryptInit_Test.cpp; path = "unit tests/PKCS11Context_C_DecryptInit_Test.cpp"; sourceTree = "<group>"; };
+		EF859201435A7AA8FC02CA48 /* READ.ME */ = {isa = PBXFileReference; lastKnownFileType = file.ME; path = READ.ME; sourceTree = "<group>"; };
+		EF866B7C100A6DF5FA1B8C24 /* PKCS11Context_C_GetMechanismInfo_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_GetMechanismInfo_Test.cpp; path = "unit tests/PKCS11Context_C_GetMechanismInfo_Test.cpp"; sourceTree = "<group>"; };
+		EF8830A1AE8AAB55F9873EC9 /* OnePinPKCS11Context_C_GetSlotList_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OnePinPKCS11Context_C_GetSlotList_Test.cpp; path = "unit tests/OnePinPKCS11Context_C_GetSlotList_Test.cpp"; sourceTree = "<group>"; };
+		EF89B8CB5498047CA075747F /* OnePinPKCS11Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnePinPKCS11Context.cpp; sourceTree = "<group>"; };
+		EF89BFE77967385CE2462ECD /* igor_X0010119.cfg */ = {isa = PBXFileReference; lastKnownFileType = file.cfg; path = igor_X0010119.cfg; sourceTree = "<group>"; };
+		EF8B5A89FA32CF3C10A63E7A /* PKCS11Context_C_SignFinal_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_SignFinal_Test.cpp; path = "unit tests/PKCS11Context_C_SignFinal_Test.cpp"; sourceTree = "<group>"; };
+		EF8B6668FBADE2A0B6D50E61 /* C_GetInfo_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C_GetInfo_Test.cpp; sourceTree = "<group>"; };
+		EF8B8F0FC873BFC505E9FDE7 /* PKCS11Context_C_InitToken_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_InitToken_Test.cpp; path = "unit tests/PKCS11Context_C_InitToken_Test.cpp"; sourceTree = "<group>"; };
+		EF8C861880C1B1B6CD5123B0 /* PKCS11Context_C_OpenSession_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_OpenSession_Test.cpp; path = "unit tests/PKCS11Context_C_OpenSession_Test.cpp"; sourceTree = "<group>"; };
+		EF8C86C0012A8CDBFF089C6B /* OnePinPKCS11Context_C_GetSlotInfo_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OnePinPKCS11Context_C_GetSlotInfo_Test.cpp; path = "unit tests/OnePinPKCS11Context_C_GetSlotInfo_Test.cpp"; sourceTree = "<group>"; };
+		EF8ED47A7F64EFF80E5D56CE /* PKCS11Context_C_GetMechanismList_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_GetMechanismList_Test.cpp; path = "unit tests/PKCS11Context_C_GetMechanismList_Test.cpp"; sourceTree = "<group>"; };
+		EF8F8DFA30142C4A86367DE2 /* PKCS11Context_C_GetTokenInfo_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_GetTokenInfo_Test.cpp; path = "unit tests/PKCS11Context_C_GetTokenInfo_Test.cpp"; sourceTree = "<group>"; };
+		EF8FFCB7BFED6A0D143E2344 /* PKCS11Context_C_SignInit_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_SignInit_Test.cpp; path = "unit tests/PKCS11Context_C_SignInit_Test.cpp"; sourceTree = "<group>"; };
+		F309CDFC97EE4A6E8AF41CAC /* PKCS11Context_C_GetSlotList_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_GetSlotList_Test.cpp; path = "unit tests/PKCS11Context_C_GetSlotList_Test.cpp"; sourceTree = SOURCE_ROOT; };
+		F644A831184F5A7400E9C301 /* esteid-pkcs11-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "esteid-pkcs11-test"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F644A833184F5A7400E9C301 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F656766F185A06880094202C /* PKCS11Context_C_Login_Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKCS11Context_C_Login_Test.cpp; path = "unit tests/PKCS11Context_C_Login_Test.cpp"; sourceTree = "<group>"; };
+		F6A43C8598214DE3B8FD3782 /* libgtest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F644A82E184F5A7400E9C301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01A520C83A924A4E8520DF45 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				4395B06F9C5B4862AF765109 /* Logger.cpp */,
+				22DD0B10EFE34E95B9923238 /* PKCS11Context.cpp */,
+				4F79217AD0DD42C4BE2FA0FF /* esteidpkcs11.cpp */,
+				12E37F5F34B7469E828314E9 /* esteidpkcs11.rc */,
+				36A55DB72DC847CDA2F9E47A /* precompiled.cpp */,
+				6E8C2C8FA19B4070ABE62D00 /* LoggerTest.cpp */,
+				23C8FAE1F02249829C1ADC8D /* PKCS11Context_C_GetInfo_Test.cpp */,
+				F309CDFC97EE4A6E8AF41CAC /* PKCS11Context_C_GetSlotList_Test.cpp */,
+				8617B5951DC642148300C054 /* main.cpp */,
+				9FFB7E49B10A40209CBB9B8E /* EstEID_utility.cpp */,
+				64B761138D83460AAC9F2684 /* asnCertificate.cpp */,
+				1694D185A0B342DB9677F701 /* asnObject.cpp */,
+				355C25B79900415C14A3783F /* PKCS11Context_C_GetSlotInfo_Test.cpp */,
+				355C2D70BF183EF23261B1AF /* esteid-unit-test.h */,
+				355C22FD159F6B88F57C6E2A /* esteid-unit-test.cpp */,
+				EF8ED47A7F64EFF80E5D56CE /* PKCS11Context_C_GetMechanismList_Test.cpp */,
+				EF866B7C100A6DF5FA1B8C24 /* PKCS11Context_C_GetMechanismInfo_Test.cpp */,
+				EF8B8F0FC873BFC505E9FDE7 /* PKCS11Context_C_InitToken_Test.cpp */,
+				EF8F8DFA30142C4A86367DE2 /* PKCS11Context_C_GetTokenInfo_Test.cpp */,
+				EF8C861880C1B1B6CD5123B0 /* PKCS11Context_C_OpenSession_Test.cpp */,
+				F656766F185A06880094202C /* PKCS11Context_C_Login_Test.cpp */,
+				EF8FFCB7BFED6A0D143E2344 /* PKCS11Context_C_SignInit_Test.cpp */,
+				EF810901DBEC40180E4446C2 /* PKCS11Context_C_Sign_Test.cpp */,
+				EF8B5A89FA32CF3C10A63E7A /* PKCS11Context_C_SignFinal_Test.cpp */,
+				EF8408CD6DFAB5DAA6778000 /* PKCS11Context_C_DecryptInit_Test.cpp */,
+				EF823B42A5865185093A0FD1 /* PKCS11Context_C_Decrypt_Test.cpp */,
+				EF8830A1AE8AAB55F9873EC9 /* OnePinPKCS11Context_C_GetSlotList_Test.cpp */,
+				EF8C86C0012A8CDBFF089C6B /* OnePinPKCS11Context_C_GetSlotInfo_Test.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		035F8ACD3A1D4DB8B169FE9E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1C8E4D9A636C46F19F193E1B /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				46AE00908E094A0AA5EE83C5 /* gtest-all.cc */,
+				2A21875ABA4C4E688437B843 /* gmock-all.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		24A4B7274BF04329899EFFEF /* gtest */ = {
+			isa = PBXGroup;
+			children = (
+				943ACFBE0FD74F6F923E4F81 /* Source Files */,
+				E3053FBDFFDC4E2E84662ED6 /* CMakeLists.txt */,
+			);
+			name = gtest;
+			sourceTree = "<group>";
+		};
+		2B7A2FFF474A4D4DAB98E931 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAF833D603FE4DF48BEC9D56 /* CardBase.cpp */,
+				6D45DBCC3F4B4379BC562216 /* EstEIDManager.cpp */,
+				D05A1EC064674B3CBDDD0107 /* PCSCManager.cpp */,
+				5B68C08E5D3E453AB415C909 /* SCError.cpp */,
+				961C4B9E5B13411F9D740464 /* SCardLog.cpp */,
+				E3162A1BF6C145B0B8F449C4 /* locked_allocator.cpp */,
+				424897663B174CBB8B0889A3 /* md5.cpp */,
+				C259BC913A6D4D48BFFAE569 /* types.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6015976CBB8C48058527050F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4684EAC4CEF4D0F91002EEC /* esteid-pkcs11.so */,
+				A114670E38024618AA15DF9B /* runUnitTests */,
+				D2AC582024F94776B4E8ECC6 /* libgmock.a */,
+				C45F314117DE45E9BC8D5F5C /* libgmock_main.a */,
+				F6A43C8598214DE3B8FD3782 /* libgtest.a */,
+				49FB9638B5B54A82A489023A /* libgtest_main.a */,
+				4D76D7F82C5746699D873AC2 /* libsmartcardpp.a */,
+				F644A831184F5A7400E9C301 /* esteid-pkcs11-test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60320EC0D6164BCDBB1DA6C5 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				A0741403CA074A92B1F5D03B /* CMake Rules */,
+				573C8FE0942146C2A5F944DF /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		6CE3D9E71F704E9E8AE40EE2 /* runUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				01A520C83A924A4E8520DF45 /* Source Files */,
+				573C8FE0942146C2A5F944DF /* CMakeLists.txt */,
+			);
+			name = runUnitTests;
+			sourceTree = "<group>";
+		};
+		6FAFBE7B66704C39AFFAEA46 /* smartcardpp */ = {
+			isa = PBXGroup;
+			children = (
+				2B7A2FFF474A4D4DAB98E931 /* Source Files */,
+				5C4AA0C0AA344AC5B0E06EC0 /* CMakeLists.txt */,
+			);
+			name = smartcardpp;
+			sourceTree = "<group>";
+		};
+		937D15FC688E4BF0A76AA979 = {
+			isa = PBXGroup;
+			children = (
+				FDE401BC62CB4ECA9E673D65 /* Sources */,
+				035F8ACD3A1D4DB8B169FE9E /* Resources */,
+				F644A832184F5A7400E9C301 /* esteid-pkcs11-test */,
+				6015976CBB8C48058527050F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		943ACFBE0FD74F6F923E4F81 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				46AE00908E094A0AA5EE83C5 /* gtest-all.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		A0741403CA074A92B1F5D03B /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		A2BE8EF67F6B4E91AB871A75 /* gmock_main */ = {
+			isa = PBXGroup;
+			children = (
+				B351DF298B2546F1840F3A65 /* Source Files */,
+				7296158E18B14C4791B6FFB8 /* CMakeLists.txt */,
+			);
+			name = gmock_main;
+			sourceTree = "<group>";
+		};
+		A7F367BD3D394E6CA84EE2CC /* gtest_main */ = {
+			isa = PBXGroup;
+			children = (
+				B7419799BD10471F9CFE99E7 /* Source Files */,
+				E3053FBDFFDC4E2E84662ED6 /* CMakeLists.txt */,
+			);
+			name = gtest_main;
+			sourceTree = "<group>";
+		};
+		B351DF298B2546F1840F3A65 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				46AE00908E094A0AA5EE83C5 /* gtest-all.cc */,
+				2A21875ABA4C4E688437B843 /* gmock-all.cc */,
+				BE2B9405B17D4CA8A75A4A8A /* gmock_main.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		B7419799BD10471F9CFE99E7 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9EEF2AFA7084E26B61CA550 /* gtest_main.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		BAE4467034F447648358B430 /* gmock */ = {
+			isa = PBXGroup;
+			children = (
+				1C8E4D9A636C46F19F193E1B /* Source Files */,
+				7296158E18B14C4791B6FFB8 /* CMakeLists.txt */,
+			);
+			name = gmock;
+			sourceTree = "<group>";
+		};
+		C237D8EC46654371ADEA498E /* esteid-pkcs11 */ = {
+			isa = PBXGroup;
+			children = (
+				D055720D238C4BFD85289B8A /* Source Files */,
+				573C8FE0942146C2A5F944DF /* CMakeLists.txt */,
+			);
+			name = "esteid-pkcs11";
+			sourceTree = "<group>";
+		};
+		D055720D238C4BFD85289B8A /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				4395B06F9C5B4862AF765109 /* Logger.cpp */,
+				22DD0B10EFE34E95B9923238 /* PKCS11Context.cpp */,
+				4F79217AD0DD42C4BE2FA0FF /* esteidpkcs11.cpp */,
+				12E37F5F34B7469E828314E9 /* esteidpkcs11.rc */,
+				36A55DB72DC847CDA2F9E47A /* precompiled.cpp */,
+				9FFB7E49B10A40209CBB9B8E /* EstEID_utility.cpp */,
+				64B761138D83460AAC9F2684 /* asnCertificate.cpp */,
+				1694D185A0B342DB9677F701 /* asnObject.cpp */,
+				EF89B8CB5498047CA075747F /* OnePinPKCS11Context.cpp */,
+				EF8135B8E36F9622D37F51B0 /* OnePinPKCS11Context.h */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		F09718C50AF94D44A6549CD1 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F53BDB2DE4FC09EEA5C5F /* CMake Rules */,
+				573C8FE0942146C2A5F944DF /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		F644A832184F5A7400E9C301 /* esteid-pkcs11-test */ = {
+			isa = PBXGroup;
+			children = (
+				F644A833184F5A7400E9C301 /* main.cpp */,
+				EF801FDA925B81A93FDA8E46 /* esteid-pkcs11-test.h */,
+				EF8B6668FBADE2A0B6D50E61 /* C_GetInfo_Test.cpp */,
+				EF811AA84C6DC0CBAF033DB7 /* esteid-pkcs11-test.cpp */,
+				EF89BFE77967385CE2462ECD /* igor_X0010119.cfg */,
+				EF831D187DDA02AFF86EB527 /* mariliis_AS3500006.cfg */,
+				EF859201435A7AA8FC02CA48 /* READ.ME */,
+				EF8394C4FE7E2A1DF6D1B8BF /* run_parallel.sh */,
+			);
+			path = "esteid-pkcs11-test";
+			sourceTree = "<group>";
+		};
+		FB4F53BDB2DE4FC09EEA5C5F /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		FDE401BC62CB4ECA9E673D65 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F09718C50AF94D44A6549CD1 /* ALL_BUILD */,
+				60320EC0D6164BCDBB1DA6C5 /* ZERO_CHECK */,
+				C237D8EC46654371ADEA498E /* esteid-pkcs11 */,
+				6CE3D9E71F704E9E8AE40EE2 /* runUnitTests */,
+				BAE4467034F447648358B430 /* gmock */,
+				A2BE8EF67F6B4E91AB871A75 /* gmock_main */,
+				24A4B7274BF04329899EFFEF /* gtest */,
+				A7F367BD3D394E6CA84EE2CC /* gtest_main */,
+				6FAFBE7B66704C39AFFAEA46 /* smartcardpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03D10BC4E2754599A00F781F /* runUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B439F052D7742519B882416 /* Build configuration list for PBXNativeTarget "runUnitTests" */;
+			buildPhases = (
+				82417DAECBE145B29B272AB1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8EAD67E74A24C8EBEB8006A /* PBXTargetDependency */,
+				A1399D44E31D4270862F21D5 /* PBXTargetDependency */,
+				E0B5287D419342C7BE02DDA6 /* PBXTargetDependency */,
+				DE2A17E6FC034273B4D23D2A /* PBXTargetDependency */,
+			);
+			name = runUnitTests;
+			productName = runUnitTests;
+			productReference = A114670E38024618AA15DF9B /* runUnitTests */;
+			productType = "com.apple.product-type.tool";
+		};
+		0A2E17D62CD54314B649E088 /* gmock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A78454C6C4A2458EBCB98242 /* Build configuration list for PBXNativeTarget "gmock" */;
+			buildPhases = (
+				27BD819582E24614ADD4F22C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gmock;
+			productName = gmock;
+			productReference = D2AC582024F94776B4E8ECC6 /* libgmock.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0CBAAAD668134D558620F000 /* gtest_main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0367FC0F3416472FB7D97263 /* Build configuration list for PBXNativeTarget "gtest_main" */;
+			buildPhases = (
+				DB6F8ACB751B40E4894EF10E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62C4B9C4A10641A8B79E0D5A /* PBXTargetDependency */,
+			);
+			name = gtest_main;
+			productName = gtest_main;
+			productReference = 49FB9638B5B54A82A489023A /* libgtest_main.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1F461C831ECF41F7AF02E8A1 /* esteid-pkcs11 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93681C2CB0047CDA1E7F898 /* Build configuration list for PBXNativeTarget "esteid-pkcs11" */;
+			buildPhases = (
+				F64616A733924425907D0F02 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58495F7A2EBE45B2B32CAEA6 /* PBXTargetDependency */,
+				AABA3E70866F4D87AC073D14 /* PBXTargetDependency */,
+			);
+			name = "esteid-pkcs11";
+			productName = "esteid-pkcs11";
+			productReference = A4684EAC4CEF4D0F91002EEC /* esteid-pkcs11.so */;
+			productType = "com.apple.product-type.tool";
+		};
+		5DA0BAA541B3440CA6D61817 /* smartcardpp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B2889EA67CF428A93D547E3 /* Build configuration list for PBXNativeTarget "smartcardpp" */;
+			buildPhases = (
+				B5AF6585788243ECB9A2D953 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = smartcardpp;
+			productName = smartcardpp;
+			productReference = 4D76D7F82C5746699D873AC2 /* libsmartcardpp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C71FB1E850444BF69B9E4051 /* gmock_main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080A908CA6EE44FBAA4138C1 /* Build configuration list for PBXNativeTarget "gmock_main" */;
+			buildPhases = (
+				0A7AACDD79714851AB4B6BED /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gmock_main;
+			productName = gmock_main;
+			productReference = C45F314117DE45E9BC8D5F5C /* libgmock_main.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D4B4D0DA83E847668B2BECFB /* gtest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7E94792918244849E502803 /* Build configuration list for PBXNativeTarget "gtest" */;
+			buildPhases = (
+				610DE2DEAC1E41478DCF28E5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gtest;
+			productName = gtest;
+			productReference = F6A43C8598214DE3B8FD3782 /* libgtest.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F644A830184F5A7400E9C301 /* esteid-pkcs11-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F644A837184F5A7400E9C301 /* Build configuration list for PBXNativeTarget "esteid-pkcs11-test" */;
+			buildPhases = (
+				F644A82D184F5A7400E9C301 /* Sources */,
+				F644A82E184F5A7400E9C301 /* Frameworks */,
+				F644A82F184F5A7400E9C301 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F644A8431850630F00E9C301 /* PBXTargetDependency */,
+				F644A83D185061F800E9C301 /* PBXTargetDependency */,
+				F644A83F185061F800E9C301 /* PBXTargetDependency */,
+			);
+			name = "esteid-pkcs11-test";
+			productName = "esteid-pkcs11-test";
+			productReference = F644A831184F5A7400E9C301 /* esteid-pkcs11-test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94F38191031B41739DAF1FCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = 38550BBF88C64A519192B05E /* Build configuration list for PBXProject "esteid-pkcs11" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 937D15FC688E4BF0A76AA979;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83F1B7D20E0341A998442296 /* ALL_BUILD */,
+				C0FD2491353B4F09B89195C4 /* RUN_TESTS */,
+				195BA6FC8AFC414FA2E6CD0B /* ZERO_CHECK */,
+				1F461C831ECF41F7AF02E8A1 /* esteid-pkcs11 */,
+				01BA4BF35414461C88857294 /* install */,
+				03D10BC4E2754599A00F781F /* runUnitTests */,
+				0A2E17D62CD54314B649E088 /* gmock */,
+				C71FB1E850444BF69B9E4051 /* gmock_main */,
+				D4B4D0DA83E847668B2BECFB /* gtest */,
+				0CBAAAD668134D558620F000 /* gtest_main */,
+				5DA0BAA541B3440CA6D61817 /* smartcardpp */,
+				F644A830184F5A7400E9C301 /* esteid-pkcs11-test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A7AACDD79714851AB4B6BED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14299BB5A5024639B0130592 /* gtest-all.cc in Sources */,
+				62315ADC49454B878E0F77AD /* gmock-all.cc in Sources */,
+				183CFD9C6C18494AADADD08F /* gmock_main.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BD819582E24614ADD4F22C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF199A48E9A74314AA96DCCC /* gtest-all.cc in Sources */,
+				A78B12A175EE4484A67D14DE /* gmock-all.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		610DE2DEAC1E41478DCF28E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D7A5F6DE3F741E5BB8779BA /* gtest-all.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82417DAECBE145B29B272AB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6567670185A06880094202C /* PKCS11Context_C_Login_Test.cpp in Sources */,
+				189433F57AD8492D885AAA57 /* Logger.cpp in Sources */,
+				989FB691C40B4280B58A8507 /* PKCS11Context.cpp in Sources */,
+				233095527A264621A125A4CB /* esteidpkcs11.cpp in Sources */,
+				C3B2FB03BE0B44828F6B7A2A /* precompiled.cpp in Sources */,
+				E60E4EE7FED74FD289F06E24 /* LoggerTest.cpp in Sources */,
+				13DF2BC289BD400ABEA7D183 /* PKCS11Context_C_GetInfo_Test.cpp in Sources */,
+				C2F3523018511BC1007AC3BE /* esteid-unit-test.cpp in Sources */,
+				A16BAEE20B444E97B4E985F2 /* PKCS11Context_C_GetSlotList_Test.cpp in Sources */,
+				4E406C7F329D4EC198E13462 /* main.cpp in Sources */,
+				F644A8441851FF7800E9C301 /* PKCS11Context_C_GetMechanismList_Test.cpp in Sources */,
+				CFF3C648D89B4CD9AEC930DF /* EstEID_utility.cpp in Sources */,
+				F6567671185EF9E10094202C /* PKCS11Context_C_Sign_Test.cpp in Sources */,
+				54D20D01B9B541E8AFF8ADC4 /* asnCertificate.cpp in Sources */,
+				BDE503E02AA6422495E9E514 /* asnObject.cpp in Sources */,
+				355C25A1B8657382D77DD1D6 /* PKCS11Context_C_GetSlotInfo_Test.cpp in Sources */,
+				EF81EAB222E5D2548E2E1C1A /* PKCS11Context_C_GetMechanismInfo_Test.cpp in Sources */,
+				EF84D09A6B83DFD7F4191304 /* PKCS11Context_C_InitToken_Test.cpp in Sources */,
+				EF899D058864C584D0CE4D92 /* PKCS11Context_C_GetTokenInfo_Test.cpp in Sources */,
+				EF8597A1C46757EC74C4D2B8 /* PKCS11Context_C_OpenSession_Test.cpp in Sources */,
+				EF8B4961BE6D17B4B712B3D4 /* PKCS11Context_C_SignInit_Test.cpp in Sources */,
+				EF87DE27F5908213A1CFFBB8 /* PKCS11Context_C_SignFinal_Test.cpp in Sources */,
+				EF8004C31CAE4F52FFBC5933 /* PKCS11Context_C_DecryptInit_Test.cpp in Sources */,
+				EF81C1B63BFB8FA2A23DA7DC /* PKCS11Context_C_Decrypt_Test.cpp in Sources */,
+				EF8C538BC3A27224075CD139 /* OnePinPKCS11Context.cpp in Sources */,
+				EF8E9269F732655008BCD975 /* OnePinPKCS11Context_C_GetSlotList_Test.cpp in Sources */,
+				EF8199D4DD26E8EEB8D30E3E /* OnePinPKCS11Context_C_GetSlotInfo_Test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5AF6585788243ECB9A2D953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2824288C1E0045018AC56A80 /* CardBase.cpp in Sources */,
+				3AE107DC5ADF4D7F87B55F25 /* EstEIDManager.cpp in Sources */,
+				34268C4A67664511B0449689 /* PCSCManager.cpp in Sources */,
+				784C85E41CC6473DAE2ABD44 /* SCError.cpp in Sources */,
+				D287C38394304A5BB926FFAA /* SCardLog.cpp in Sources */,
+				B029D8C4D537441BA5FC4E3F /* locked_allocator.cpp in Sources */,
+				F0D26BEF91CB42CFAAE33439 /* md5.cpp in Sources */,
+				441CB456D4A04F13B5D81041 /* types.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB6F8ACB751B40E4894EF10E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46D3EAB2EC949A5A23FA215 /* gtest_main.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F644A82D184F5A7400E9C301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F644A834184F5A7400E9C301 /* main.cpp in Sources */,
+				EF80CD3C2EB5185601AF53B1 /* C_GetInfo_Test.cpp in Sources */,
+				EF85D7B4CF6484F3B7FCCF1E /* esteid-pkcs11-test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64616A733924425907D0F02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B772D0F3264F34BCAE101A /* Logger.cpp in Sources */,
+				7E8D219FC71848FDA59EA3F0 /* PKCS11Context.cpp in Sources */,
+				3DB2269811E64A39B9A2BD3B /* esteidpkcs11.cpp in Sources */,
+				3E3968EE554C413CB3CAD23F /* precompiled.cpp in Sources */,
+				88384813D86A4DBCAE5FA665 /* EstEID_utility.cpp in Sources */,
+				546A1F57A93E4567923A4EDC /* asnCertificate.cpp in Sources */,
+				1AE9661982CE427592693FA9 /* asnObject.cpp in Sources */,
+				EF8088EAA6899E7250616CA2 /* OnePinPKCS11Context.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E83F81C795D4D5DA566635C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03D10BC4E2754599A00F781F /* runUnitTests */;
+			targetProxy = 346F2779713B4D02A7BB3CCE /* PBXContainerItemProxy */;
+		};
+		17CC2560FF2144FF99FB3E9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C71FB1E850444BF69B9E4051 /* gmock_main */;
+			targetProxy = 9AF63EC8A6B04427ABF815CF /* PBXContainerItemProxy */;
+		};
+		192D2A04879641BB96F812E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F461C831ECF41F7AF02E8A1 /* esteid-pkcs11 */;
+			targetProxy = 453223AED1E94733914FA77B /* PBXContainerItemProxy */;
+		};
+		4DF38B9FA4AF4F6AA1C71440 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83F1B7D20E0341A998442296 /* ALL_BUILD */;
+			targetProxy = 458F8F3335E84750A88BAEE1 /* PBXContainerItemProxy */;
+		};
+		57ED3B15354144E9804FDEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A2E17D62CD54314B649E088 /* gmock */;
+			targetProxy = 42421C4BB28342C58F8A2F8D /* PBXContainerItemProxy */;
+		};
+		58495F7A2EBE45B2B32CAEA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 195BA6FC8AFC414FA2E6CD0B /* ZERO_CHECK */;
+			targetProxy = A8B1D58DEAB640D48676D8F0 /* PBXContainerItemProxy */;
+		};
+		62C4B9C4A10641A8B79E0D5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B4D0DA83E847668B2BECFB /* gtest */;
+			targetProxy = 844472C7C4E64E00A06D1EB7 /* PBXContainerItemProxy */;
+		};
+		A1399D44E31D4270862F21D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 195BA6FC8AFC414FA2E6CD0B /* ZERO_CHECK */;
+			targetProxy = 3D252BFFF6374FF68705B4E6 /* PBXContainerItemProxy */;
+		};
+		A9D8D435E8B14AABAB005B58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CBAAAD668134D558620F000 /* gtest_main */;
+			targetProxy = 1E0D0E785CD64B8289512934 /* PBXContainerItemProxy */;
+		};
+		AABA3E70866F4D87AC073D14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DA0BAA541B3440CA6D61817 /* smartcardpp */;
+			targetProxy = 3B23F270204545D68ADA2C8D /* PBXContainerItemProxy */;
+		};
+		B5929F8310EF4DD3982AB98F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DA0BAA541B3440CA6D61817 /* smartcardpp */;
+			targetProxy = 75D1C6381920429CB2063487 /* PBXContainerItemProxy */;
+		};
+		C8CCB3FC57A54719A10BFCBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 195BA6FC8AFC414FA2E6CD0B /* ZERO_CHECK */;
+			targetProxy = 16B50D428A4F4BC9A0DE5698 /* PBXContainerItemProxy */;
+		};
+		CDAFCDEAE97547289186D6E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B4D0DA83E847668B2BECFB /* gtest */;
+			targetProxy = 9FDFA2507E6F4640999B2616 /* PBXContainerItemProxy */;
+		};
+		DE2A17E6FC034273B4D23D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DA0BAA541B3440CA6D61817 /* smartcardpp */;
+			targetProxy = B4D14C5600CD42A59AFF02E0 /* PBXContainerItemProxy */;
+		};
+		E0B5287D419342C7BE02DDA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C71FB1E850444BF69B9E4051 /* gmock_main */;
+			targetProxy = 13A380C084ED43C3AE779179 /* PBXContainerItemProxy */;
+		};
+		E8EAD67E74A24C8EBEB8006A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A2E17D62CD54314B649E088 /* gmock */;
+			targetProxy = 6EDA0243057F4DC78B8F13B8 /* PBXContainerItemProxy */;
+		};
+		F644A83D185061F800E9C301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A2E17D62CD54314B649E088 /* gmock */;
+			targetProxy = F644A83C185061F800E9C301 /* PBXContainerItemProxy */;
+		};
+		F644A83F185061F800E9C301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C71FB1E850444BF69B9E4051 /* gmock_main */;
+			targetProxy = F644A83E185061F800E9C301 /* PBXContainerItemProxy */;
+		};
+		F644A8431850630F00E9C301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F461C831ECF41F7AF02E8A1 /* esteid-pkcs11 */;
+			targetProxy = F644A8421850630F00E9C301 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02A583C8AD9646759EB9B36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		042BF4E39ECA449699058027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		045B793CC6AB4769BED82335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		078FFC7330894B34AA21A7F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		0A31DB005400404C8847004A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		0E6E736A522243BC9EC87316 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		151327D6CCA244A0976149B7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		1B8DB3F7A2D244CE97757C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		23D17DC0A1A048B39F923114 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = smartcardpp;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/smartcardpp";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		25A40E30FD834A118AF20F07 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		25DF3D5B2B4C4D4CBA6D29C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = "$(SRCROOT)/build";
+			};
+			name = Debug;
+		};
+		2991BC785AC24A87854EDAA5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = .so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					esteid_pkcs11_EXPORTS,
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/smartcardpp/MinSizeRel/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "esteid-pkcs11";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		2A2E12A92D78498AAF923CED /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		2C41C6246D57432F8FFAA40E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/googlemock/Release/libgmock.a",
+					"$(SRCROOT)/googlemock/Release/libgmock_main.a",
+					"$(SRCROOT)/smartcardpp/Release/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = runUnitTests;
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		2C758FD867CE410D94FB10D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		2CCC1DC39C5A48F8BA17D69C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = "$(SRCROOT)/build";
+			};
+			name = Release;
+		};
+		2EE80402DB7A40B09FB9FA79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		304243A4A3714A8EA20B9B0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+					TEST_MODE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/googlemock/Debug/libgmock.a",
+					"$(SRCROOT)/googlemock/Debug/libgmock_main.a",
+					"$(SRCROOT)/smartcardpp/Debug/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = runUnitTests;
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		3819776E28E14276B305A455 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/googlemock/MinSizeRel/libgmock.a",
+					"$(SRCROOT)/googlemock/MinSizeRel/libgmock_main.a",
+					"$(SRCROOT)/smartcardpp/MinSizeRel/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = runUnitTests;
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		41C6B1509D464D9CBBAC618B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = "$(SRCROOT)/build";
+			};
+			name = RelWithDebInfo;
+		};
+		4A848BB6E5A24DE99AE901D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = .so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					esteid_pkcs11_EXPORTS,
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/smartcardpp/Release/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "esteid-pkcs11";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		4B87C1B6260D4AA89F66AB56 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		5865B411B60E43AD9C504505 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = smartcardpp;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/smartcardpp";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		5A67BA8A272F49D999AD53B6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		6ED5AFB4B593473ABD59E8EC /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/googlemock/RelWithDebInfo/libgmock.a",
+					"$(SRCROOT)/googlemock/RelWithDebInfo/libgmock_main.a",
+					"$(SRCROOT)/smartcardpp/RelWithDebInfo/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = runUnitTests;
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		737227C4BB3D4685916D2D73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		7AFC31C4C2F34DBC82679632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		837BE28065CE44F9BF73C266 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		86A383E469154AD38785DAEE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		8BB3839AD9624959AF969D82 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		8FAAF97E95D94C1089CC3B98 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		94931C2DCDB74B1F8F3B65F2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = .so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					esteid_pkcs11_EXPORTS,
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/smartcardpp/RelWithDebInfo/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "esteid-pkcs11";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		9CE826D8DE1F43DBA0FD2563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		9FC6A82BDC524ECFA9365128 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		A4B46847E0D5417B8B35181E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		A6E96791CC2E4195AD05F101 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = "$(SRCROOT)/build";
+			};
+			name = MinSizeRel;
+		};
+		AA2961117ED8432B95B093E7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		C14E962140C8429CA5C0BACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		CA379188DBB349C089E2A516 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		CC9825B912C14295A26B44E0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		D363536225664809B37078AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = .so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					esteid_pkcs11_EXPORTS,
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/smartcardpp/Debug/libsmartcardpp.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "esteid-pkcs11";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		D7308D23DC3E4A19907B58C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gmock;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		DE6881DB7E174B48A8BC836F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = smartcardpp;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/smartcardpp";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		DEFF07D6B25145FF9988294B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		E8569E704BF4468A976D5235 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = smartcardpp;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/smartcardpp";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		F5BEC33EAE2A41E7BA9572FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		F644A838184F5A7400E9C301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/gtest/include",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(SRCROOT)/googlemock/Debug/libgmock.a",
+					"$(SRCROOT)/googlemock/Debug/libgmock_main.a",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libssl.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libiconv.dylib,
+					"-framework",
+					PCSC,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)";
+			};
+			name = Debug;
+		};
+		F644A839184F5A7400E9C301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/gtest/include",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)";
+			};
+			name = Release;
+		};
+		F644A83A184F5A7400E9C301 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/gtest/include",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)";
+			};
+			name = MinSizeRel;
+		};
+		F644A83B184F5A7400E9C301 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/gtest/include",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)";
+			};
+			name = RelWithDebInfo;
+		};
+		F916CD9151E84B9FBD0D4DD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include,
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+					"$(SRCROOT)/googlemock/include",
+					"$(SRCROOT)/googlemock",
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		FF69CA20E4AF4CC58C87AE95 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'MAJOR_VER=3'",
+					"'MINOR_VER=9'",
+					"'RELEASE_VER=0'",
+					"'BUILD_VER=10954'",
+					"'BUILD_DATE=\"03.12.2013\"'",
+					"'DOMAINURL=\"ria.ee\"'",
+					"'ORG=\"RIA\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/googlemock/gtest/include",
+					"$(SRCROOT)/googlemock/gtest",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-Wno-c++11-narrowing",
+					"-stdlib=libc++",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "$(SRCROOT)/googlemock/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0367FC0F3416472FB7D97263 /* Build configuration list for PBXNativeTarget "gtest_main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5BEC33EAE2A41E7BA9572FF /* Debug */,
+				7AFC31C4C2F34DBC82679632 /* Release */,
+				FF69CA20E4AF4CC58C87AE95 /* MinSizeRel */,
+				2A2E12A92D78498AAF923CED /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		080A908CA6EE44FBAA4138C1 /* Build configuration list for PBXNativeTarget "gmock_main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4B46847E0D5417B8B35181E /* Debug */,
+				042BF4E39ECA449699058027 /* Release */,
+				8BB3839AD9624959AF969D82 /* MinSizeRel */,
+				AA2961117ED8432B95B093E7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0B2889EA67CF428A93D547E3 /* Build configuration list for PBXNativeTarget "smartcardpp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8569E704BF4468A976D5235 /* Debug */,
+				DE6881DB7E174B48A8BC836F /* Release */,
+				23D17DC0A1A048B39F923114 /* MinSizeRel */,
+				5865B411B60E43AD9C504505 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2B439F052D7742519B882416 /* Build configuration list for PBXNativeTarget "runUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304243A4A3714A8EA20B9B0E /* Debug */,
+				2C41C6246D57432F8FFAA40E /* Release */,
+				3819776E28E14276B305A455 /* MinSizeRel */,
+				6ED5AFB4B593473ABD59E8EC /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		38550BBF88C64A519192B05E /* Build configuration list for PBXProject "esteid-pkcs11" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DF3D5B2B4C4D4CBA6D29C1 /* Debug */,
+				2CCC1DC39C5A48F8BA17D69C /* Release */,
+				A6E96791CC2E4195AD05F101 /* MinSizeRel */,
+				41C6B1509D464D9CBBAC618B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4C4EAFF4D0034FF39ABCAF49 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E6E736A522243BC9EC87316 /* Debug */,
+				C14E962140C8429CA5C0BACF /* Release */,
+				DEFF07D6B25145FF9988294B /* MinSizeRel */,
+				8FAAF97E95D94C1089CC3B98 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5CE5A2556C5A484C9E4AC5DD /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A583C8AD9646759EB9B36C /* Debug */,
+				F916CD9151E84B9FBD0D4DD6 /* Release */,
+				5A67BA8A272F49D999AD53B6 /* MinSizeRel */,
+				0A31DB005400404C8847004A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A78454C6C4A2458EBCB98242 /* Build configuration list for PBXNativeTarget "gmock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C758FD867CE410D94FB10D3 /* Debug */,
+				D7308D23DC3E4A19907B58C5 /* Release */,
+				CA379188DBB349C089E2A516 /* MinSizeRel */,
+				25A40E30FD834A118AF20F07 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D7E94792918244849E502803 /* Build configuration list for PBXNativeTarget "gtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B8DB3F7A2D244CE97757C00 /* Debug */,
+				9CE826D8DE1F43DBA0FD2563 /* Release */,
+				837BE28065CE44F9BF73C266 /* MinSizeRel */,
+				9FC6A82BDC524ECFA9365128 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D94396DE8E0F4F1BB18865BF /* Build configuration list for PBXAggregateTarget "RUN_TESTS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078FFC7330894B34AA21A7F3 /* Debug */,
+				045B793CC6AB4769BED82335 /* Release */,
+				CC9825B912C14295A26B44E0 /* MinSizeRel */,
+				86A383E469154AD38785DAEE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DFAC0A323D8145689FEFA633 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				737227C4BB3D4685916D2D73 /* Debug */,
+				2EE80402DB7A40B09FB9FA79 /* Release */,
+				4B87C1B6260D4AA89F66AB56 /* MinSizeRel */,
+				151327D6CCA244A0976149B7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F644A837184F5A7400E9C301 /* Build configuration list for PBXNativeTarget "esteid-pkcs11-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F644A838184F5A7400E9C301 /* Debug */,
+				F644A839184F5A7400E9C301 /* Release */,
+				F644A83A184F5A7400E9C301 /* MinSizeRel */,
+				F644A83B184F5A7400E9C301 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F93681C2CB0047CDA1E7F898 /* Build configuration list for PBXNativeTarget "esteid-pkcs11" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D363536225664809B37078AF /* Debug */,
+				4A848BB6E5A24DE99AE901D6 /* Release */,
+				2991BC785AC24A87854EDAA5 /* MinSizeRel */,
+				94931C2DCDB74B1F8F3B65F2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94F38191031B41739DAF1FCC /* Project object */;
+}

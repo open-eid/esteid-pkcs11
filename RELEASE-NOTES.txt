@@ -1,0 +1,15 @@
+Esteid-pkcs11 version 3.8.1 release notes
+--------------------------------------
+Changes compared to ver 3.8.0
+
+- Added one-pin module to improve authentication in Firefox web browser in OSX environment.
+
+
+
+Esteid-pkcs11 version 3.8.0 release notes
+--------------------------------------
+- Added support for new ID card version v3.5.1 to esteid-pkcs11 driver.
+- Started using esteid-pkcs11 driver in OSX (instead of OpenSC).
+
+Known issues:
+-  When using esteid-pkcs11 driver with PIN pad device when PIN insertion is required then the user is asked to enter the PIN code twice.

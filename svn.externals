@@ -1,0 +1,3 @@
+^/cmake cmake
+^/smartcardpp/branches/public_releases/3.8 smartcardpp
+http://googlemock.googlecode.com/svn/tags/release-1.6.0 googlemock
