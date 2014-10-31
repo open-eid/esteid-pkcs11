@@ -19,6 +19,9 @@ if(UNIX AND NOT APPLE)
 endif()
 
 add_subdirectory(googlemock)
+if(NOT GMOCK_ROOT)
+  set(GMOCK_ROOT "googlemock")
+endif()
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
   ${OPENSSL_INCLUDE_DIR}
   ${PCSCLITE_INCLUDE_DIR}
