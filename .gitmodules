@@ -1,0 +1,12 @@
+[submodule "googlemock"]
+	path = googlemock
+	url = https://chromium.googlesource.com/external/googlemock.git
+[submodule "gtest"]
+	path = gtest
+	url = https://chromium.googlesource.com/external/googletest.git
+[submodule "cmake"]
+	path = cmake
+	url = ../cmake
+[submodule "smartcardpp"]
+	path = smartcardpp
+	url = ../smartcardpp
