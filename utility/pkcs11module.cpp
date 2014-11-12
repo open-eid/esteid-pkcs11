@@ -1,7 +1,7 @@
 /*!
 	\file		pkcs11module.cpp
 	\copyright	(c) Kaido Kert ( kaidokert@gmail.com )
-	\licence	BSD
+	\licence	LGPL
 	\author		$Author: kaidokert $
 	\date		$Date: 2009-04-13 11:34:43 +0300 (Mon, 13 Apr 2009) $
 */
