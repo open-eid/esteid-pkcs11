@@ -1,0 +1,25 @@
+Source: esteid-pkcs11
+Section: libs
+Priority: extra
+Maintainer: RIA <info@ria.ee>
+Build-Depends:
+ cdbs,
+ cmake,
+ libssl-dev
+Standards-Version: 3.9.5
+Homepage: https://github.com/open-eid/esteid-pkcs11
+
+Package: esteid-pkcs11
+Architecture: any
+Multi-Arch: same
+Pre-Depends: pcscd (>=1.5), ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: EstEID PKCS11 library
+ PKCS11 library for EstEID smartcards
+
+Package: esteid-pkcs11-dbg
+Architecture: any
+Section: debug
+Depends: esteid-pkcs11 (= ${binary:Version}), ${misc:Depends}
+Description: EstEID PKCS11 library debug symbols
+ PKCS11 debug symbols for EstEID PKCS11 library

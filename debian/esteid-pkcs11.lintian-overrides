@@ -1,0 +1,2 @@
+esteid-pkcs11: shlib-without-versioned-soname
+esteid-pkcs11: pkg-has-shlibs-control-file-but-no-actual-shared-libs
