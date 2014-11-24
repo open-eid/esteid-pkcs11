@@ -335,8 +335,8 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_GetInfo(CK_INFO_PTR pInfo  )) {
   padString(pInfo->manufacturerID, sizeof(pInfo->manufacturerID), "EstEID (pkcs11 opensource)");
   pInfo->flags = 0;
   padString(pInfo->libraryDescription, sizeof(pInfo->libraryDescription), "EstEID PKCS#11 Library");
-  pInfo->libraryVersion.major = 0;
-  pInfo->libraryVersion.minor = 1;
+  pInfo->libraryVersion.major = MAJOR_VER;
+  pInfo->libraryVersion.minor = MINOR_VER;
   return CKR_OK;
 }
 
