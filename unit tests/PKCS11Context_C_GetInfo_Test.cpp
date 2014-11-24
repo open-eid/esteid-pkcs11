@@ -11,8 +11,8 @@ TEST(PKCS11Context, C_GetInfo) {
   ASSERT_EQ(2, pInfo->cryptokiVersion.major);
   ASSERT_EQ(20, pInfo->cryptokiVersion.minor);
   ASSERT_EQ(0, pInfo->flags);
-  ASSERT_EQ(0, pInfo->libraryVersion.major);
-  ASSERT_EQ(1, pInfo->libraryVersion.minor);
+  ASSERT_EQ(MAJOR_VER, pInfo->libraryVersion.major);
+  ASSERT_EQ(MINOR_VER, pInfo->libraryVersion.minor);
 
   //according to PKCS11 spec manufacturerID and libraryDescription should be "not" null-terminated
   char result[33];
