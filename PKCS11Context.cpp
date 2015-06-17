@@ -590,26 +590,26 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_OpenSession(
     _log("sessionHandle = %lu, slotID = %lu", *phSession, slotID);
 
     sessions.push_back(std::make_shared<PKCS11Session>(*phSession, slotID, flags, pApplication, Notify));
-    sessIter sess = --sessions.end();
+    shared_ptr<PKCS11Session> sess = sessions.at(sessions.size()-1);
 
-    for (shared_ptr<PKCS11Session> sessI : sessions) {
+    for (const shared_ptr<PKCS11Session> sessI : sessions) {
         if (sessI->slotID == slotID) {
-            (*sess)->state = (*sessI).state;
-            (*sess)->pin = (*sessI).pin;
+            sess->state = sessI->state;
+            sess->pin = sessI->pin;
             break;
         }
     }
-    (*sess)->readerID = readerID;
+    sess->readerID = readerID;
 
     if (IS_SIGN_SLOT) {
       _log("C_OpenSession, createCertificate, getSignCert, slot 1");
-      (*sess)->createCertificate(cardm.getSignCert(), (*sess)->sign, "Signature", 223);
+      sess->createCertificate(cardm.getSignCert(), sess->sign, "Signature", 223);
     } else {
       _log((slotID == 0 ? "C_OpenSession, createCertificate, getAuthCert, slot 0" : "C_OpenSession, createCertificate, getAuthCert, unknown slot"));
-      (*sess)->createCertificate(cardm.getAuthCert(), (*sess)->auth, "Authentication", 123);
+      sess->createCertificate(cardm.getAuthCert(), sess->auth, "Authentication", 123);
     }
 
-    _log("<--------- C_OpenSession (CKR_OK) phSession = %d, sess->session = %d, sessioone kokku = %d ", phSession, (*sess)->session, sessions.size());
+    _log("<--------- C_OpenSession (CKR_OK) phSession = %d, sess->session = %d, sessioone kokku = %d ", phSession, sess->session, sessions.size());
     return CKR_OK;
   }
   catch(std::runtime_error &)
