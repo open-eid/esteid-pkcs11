@@ -41,11 +41,11 @@ class PKCS11Context
 {
   CardManager *mgr;
   CK_SESSION_HANDLE nextSession;
-  std::vector<PKCS11Session > sessions;
-  typedef std::vector<PKCS11Session >::iterator sessIter;
+  std::vector<shared_ptr<PKCS11Session>> sessions;
+  typedef std::vector<shared_ptr<PKCS11Session>>::iterator sessIter;
 
 	CK_SESSION_HANDLE getNextSessionHandle();
-  ByteVec signData(ByteVec const &, std::vector<PKCS11Session>::iterator);
+  ByteVec signData(ByteVec const &, std::vector<shared_ptr<PKCS11Session>>::iterator);
   void init();
 
 protected:

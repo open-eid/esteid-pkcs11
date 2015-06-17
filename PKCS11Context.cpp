@@ -17,6 +17,7 @@
 #include "utility/asnCertificate.h"
 #include <map>
 #include "Logger.h"
+#include <memory>
 
 #undef min
 
@@ -172,10 +173,10 @@ public:
     : mState(state), mSlot(slot), mPin(pin) {
     }
     
-    void operator ()(PKCS11Session &obj) {
-      if (obj.slotID == mSlot) {
-        obj.state = mState;
-        obj.pin = mPin;
+    void operator ()(shared_ptr<PKCS11Session> &obj) {
+      if ((*obj).slotID == mSlot) {
+        (*obj).state = mState;
+        (*obj).pin = mPin;
       }
     }
   };
@@ -313,7 +314,7 @@ session(sh), slotID(s), flags(f), pApplication(app), notify(n), state(CKS_RO_PUB
 }
 
 PKCS11Session::~PKCS11Session(void) {
-  _log("Session %i", session);
+  _log("~PKCS11Session() Session = %i, slot = %d, readerId = %d, objects size = %d, search param size = %d, ", session, slotID, readerID, objects.size(), searchParam.size(), searchHandles.size());
 }
 
 CK_SESSION_HANDLE PKCS11Context::getNextSessionHandle() {
@@ -584,26 +585,31 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_OpenSession(
     }
 
     *phSession = getNextSessionHandle();
-    _log("sessionHandle = %lu, slotID = %lu", *phSession, slotID);
-    sessions.push_back(PKCS11Session(*phSession, slotID, flags, pApplication, Notify));
+   _log("----------> new C_OpenSession() - session = %i ", phSession);
 
-    sessIter sessI, sess = --sessions.end();
-    for (sessI = sessions.begin(); sessI != sessions.end(); sessI++) {
-      if (sessI->slotID == slotID) {
-        sess->state = sessI->state;
-        sess->pin = sessI->pin;
-        break;
-      }
+    _log("sessionHandle = %lu, slotID = %lu", *phSession, slotID);
+
+    sessions.push_back(std::make_shared<PKCS11Session>(*phSession, slotID, flags, pApplication, Notify));
+    sessIter sess = --sessions.end();
+
+    for (shared_ptr<PKCS11Session> sessI : sessions) {
+        if (sessI->slotID == slotID) {
+            (*sess)->state = (*sessI).state;
+            (*sess)->pin = (*sessI).pin;
+            break;
+        }
     }
-    sess->readerID = readerID;
+    (*sess)->readerID = readerID;
 
     if (IS_SIGN_SLOT) {
       _log("C_OpenSession, createCertificate, getSignCert, slot 1");
-      sess->createCertificate(cardm.getSignCert(), sess->sign, "Signature", 223);
+      (*sess)->createCertificate(cardm.getSignCert(), (*sess)->sign, "Signature", 223);
     } else {
       _log((slotID == 0 ? "C_OpenSession, createCertificate, getAuthCert, slot 0" : "C_OpenSession, createCertificate, getAuthCert, unknown slot"));
-      sess->createCertificate(cardm.getAuthCert(), sess->auth, "Authentication", 123);
+      (*sess)->createCertificate(cardm.getAuthCert(), (*sess)->auth, "Authentication", 123);
     }
+
+    _log("<--------- C_OpenSession (CKR_OK) phSession = %d, sess->session = %d, sessioone kokku = %d ", phSession, (*sess)->session, sessions.size());
     return CKR_OK;
   }
   catch(std::runtime_error &)
@@ -617,17 +623,17 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_GetSessionInfo(
                                                            CK_SESSION_HANDLE hSession,
                                                            CK_SESSION_INFO_PTR pInfo)) {
   FLOG;
+  sessIter sess = std::find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
 
   _log("SESSIONS SIZE = %i", sessions.size());
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
   FLOG;
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
   FLOG;
-  pInfo->slotID = sess->slotID;
-  pInfo->state = sess->state;
-  pInfo->flags = sess->flags;
+  pInfo->slotID = (*sess)->slotID;
+  pInfo->state = (*sess)->state;
+  pInfo->flags = (*sess)->flags;
   pInfo->ulDeviceError = 0;
   FLOG;
   return CKR_OK;
@@ -635,13 +641,15 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_GetSessionInfo(
 
 CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_CloseSession(CK_SESSION_HANDLE hSession)) {
   FLOG;
-  sessions.erase(std::remove_if(sessions.begin(), sessions.end(), [&](PKCS11Session &session ){ return session.session == hSession;}), sessions.end());
+  _log("---------> C_CloseSession session = %d (open sessions = %d)", hSession, sessions.size());
+  sessions.erase(std::remove_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;}), sessions.end());
+  _log("<--------- C_CloseSession session = %d (open sessions = %d)", hSession, sessions.size());
   return CKR_OK;
 }
 
 CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_CloseAllSessions(CK_SLOT_ID slotID)) {
   FLOG;
-  sessions.erase(std::remove_if(sessions.begin(), sessions.end(), [&](PKCS11Session &session ){ return session.slotID == slotID;}), sessions.end());
+  sessions.erase(std::remove_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).slotID == slotID;}), sessions.end());
   return CKR_OK;
 }
 
@@ -692,26 +700,25 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_FindObjectsInit(
                                                             )) {
   FLOG;
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  sess->searchParam.clear();
+  (*sess)->searchParam.clear();
   
   for (uint i = 0; i < ulCount; i++){
-    sess->searchParam.push_back(*(pTemplate + i));
+    (*sess)->searchParam.push_back(*(pTemplate + i));
   }
   
-  sess->searchHandles.clear();
-  sess->searchHandles.resize(sess->objects.size());
-  std::vector<ObjHandle >::iterator copy = remove_copy_if(sess->objects.begin(),
-                                                          sess->objects.end(),
-                                                          sess->searchHandles.begin(),
-                                                          searchTerm(sess->searchParam, sess->state));
+  (*sess)->searchHandles.clear();
+  (*sess)->searchHandles.resize((*sess)->objects.size());
+  std::vector<ObjHandle >::iterator copy = remove_copy_if((*sess)->objects.begin(),
+                                                          (*sess)->objects.end(),
+                                                          (*sess)->searchHandles.begin(),
+                                                          searchTerm((*sess)->searchParam, (*sess)->state));
 
-  sess->searchHandles.resize(copy - sess->searchHandles.begin());
-  
+  (*sess)->searchHandles.resize(copy - (*sess)->searchHandles.begin());
   return CKR_OK;
 }
 
@@ -723,20 +730,20 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_FindObjects(
                                                         )) {
   FLOG;
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
   
-  CK_ULONG returnCount = std::min(ulMaxObjectCount, (CK_ULONG) sess->searchHandles.size());
+  CK_ULONG returnCount = std::min(ulMaxObjectCount, (CK_ULONG) (*sess)->searchHandles.size());
   *pulObjectCount = returnCount;
   
   if (returnCount) {
-    memcpy(phObject, &sess->searchHandles.front(), returnCount * sizeof(CK_OBJECT_HANDLE));
+    memcpy(phObject, &(*sess)->searchHandles.front(), returnCount * sizeof(CK_OBJECT_HANDLE));
   }
   
-  sess->searchHandles.erase(sess->searchHandles.begin(), sess->searchHandles.end());
+  (*sess)->searchHandles.erase((*sess)->searchHandles.begin(), (*sess)->searchHandles.end());
   return CKR_OK;
 }
 
@@ -746,12 +753,12 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_FindObjectsFinal(
                                                              )) {
   FLOG;
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  sess->searchParam.clear();
-  sess->searchHandles.clear();
+  (*sess)->searchParam.clear();
+  (*sess)->searchHandles.clear();
   return CKR_OK;
 }
 
@@ -762,29 +769,28 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Login(CK_SESSION_HANDLE hSession,  /
                                                   )) {
   FLOG;
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
   
-  sess->pin = PinString((const char *) pPin, (size_t) ulPinLen);
-  
+  (*sess)->pin = PinString((const char *) pPin, (size_t) ulPinLen);
   try {
-    createCardManager(sess->readerID);
-    if (!cardm.isInReader(sess->readerID)){
+    createCardManager((*sess)->readerID);
+    if (!cardm.isInReader((*sess)->readerID)){
       _log("CKR_DEVICE_REMOVED");
       return CKR_DEVICE_REMOVED;
     }
-    _log("slotId = %i, sess->readerID = %i, user = %ul", sess->slotID, sess->readerID, userType);
+    _log("... slotId = %i, sess->readerID = %i, user = %ul", (*sess)->slotID, (*sess)->readerID, userType);
 
     byte retriesLeft;
-    if (sess->IS_SIGN_SLOT) {
+    if ((*sess)->IS_SIGN_SLOT) {
       FLOG;
-      cardm.validateSignPin(sess->pin, retriesLeft);
+      cardm.validateSignPin((*sess)->pin, retriesLeft);
     }
     else {
       FLOG;
-      cardm.validateAuthPin(sess->pin, retriesLeft);
+      cardm.validateAuthPin((*sess)->pin, retriesLeft);
     }
   } catch ( AuthError &ae) {
     if (ae.m_badinput)  {
@@ -801,19 +807,18 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Login(CK_SESSION_HANDLE hSession,  /
     return CKR_GENERAL_ERROR;
   }
 
-  for_each(sessions.begin(), sessions.end(),  PKCS11Session::changeState(sess->slotID, CKS_RO_USER_FUNCTIONS, sess->pin));
+  for_each(sessions.begin(), sessions.end(), PKCS11Session::changeState((*sess)->slotID, CKS_RO_USER_FUNCTIONS, (*sess)->pin));
   return CKR_OK;
 }
 
 CK_DEFINE_FUNCTION(CK_RV, PKCS11Context::C_Logout(CK_SESSION_HANDLE hSession  /* the session's handle */ )) {
   FLOG;
-  
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  for_each(sessions.begin(), sessions.end(), PKCS11Session::changeState(sess->slotID, CKS_RO_PUBLIC_SESSION, sess->pin));
-  sess->pin.clear();
+  for_each(sessions.begin(), sessions.end(), PKCS11Session::changeState((*sess)->slotID, CKS_RO_PUBLIC_SESSION, (*sess)->pin));
+  (*sess)->pin.clear();
   return CKR_OK;
 }
 
@@ -824,15 +829,13 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_GetAttributeValue(
                                                               CK_ULONG ulCount     /* attributes in template */
                                                               )) {
   FLOG;
-  
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
   
-  objectIter obj = find(sess->objects.begin(), sess->objects.end(), ObjHandle(hObject));
-  
-  if (obj == sess->objects.end()) {
+  objectIter obj = find((*sess)->objects.begin(), (*sess)->objects.end(), ObjHandle(hObject));
+  if (obj == (*sess)->objects.end()) {
     return CKR_OBJECT_HANDLE_INVALID;
   }
   
@@ -871,16 +874,16 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_SignInit(
                                                      CK_OBJECT_HANDLE hKey )) {    /* handle of signature key */
   FLOG;
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  if (sess->state != CKS_RO_USER_FUNCTIONS) {
+  if ((*sess)->state != CKS_RO_USER_FUNCTIONS) {
     return CKR_USER_NOT_LOGGED_IN;
   }
 
-  memcpy(&sess->sigMechanism, pMechanism, sizeof(*pMechanism));
-  switch (sess->sigMechanism.mechanism) {
+  memcpy(&(*sess)->sigMechanism, pMechanism, sizeof(*pMechanism));
+  switch ((*sess)->sigMechanism.mechanism) {
     case CKM_RSA_PKCS:
       return CKR_OK;
     default:
@@ -894,15 +897,15 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_SignUpdate(
                                                        CK_ULONG ulPartLen )) {/* count of bytes to sign */
   FLOG;
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  if (sess->state != CKS_RO_USER_FUNCTIONS) {
+  if ((*sess)->state != CKS_RO_USER_FUNCTIONS) {
     return CKR_USER_NOT_LOGGED_IN;
   }
 
-  sess->dataToSign.insert(sess->dataToSign.end(), pPart, pPart + ulPartLen);
+  (*sess)->dataToSign.insert((*sess)->dataToSign.end(), pPart, pPart + ulPartLen);
   
   return CKR_OK;
 }
@@ -915,18 +918,18 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Sign(
                                                  CK_ULONG_PTR pulSignatureLen )) {/* gets signature length */
   FLOG;
 
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  if (sess->state != CKS_RO_USER_FUNCTIONS) {
+  if ((*sess)->state != CKS_RO_USER_FUNCTIONS) {
     return CKR_USER_NOT_LOGGED_IN;
   }
   try {
     CK_ULONG len = *pulSignatureLen;
 
-    createCardManager(sess->readerID);
-    if (!cardm.isInReader(sess->readerID)) {
+    createCardManager((*sess)->readerID);
+    if (!cardm.isInReader((*sess)->readerID)) {
       return CKR_DEVICE_REMOVED;
     }
     *pulSignatureLen = cardm.getKeySize() / 8;
@@ -943,7 +946,7 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Sign(
       return CKR_FUNCTION_FAILED;
     }
     memcpy(pSignature, &result[0], result.size());
-    memset(&sess->sigMechanism, 0, sizeof(sess->sigMechanism));
+    memset(&(*sess)->sigMechanism, 0, sizeof((*sess)->sigMechanism));
     return CKR_OK;
   } catch ( AuthError &ae ) {
     _log("SIGNERROR = %s", ae.what());
@@ -961,13 +964,13 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Sign(
 }
 
 
-ByteVec PKCS11Context::signData(ByteVec const & dataToSign, std::vector<PKCS11Session>::iterator session) {
+ByteVec PKCS11Context::signData(ByteVec const & dataToSign, sessIter session) {
   ByteVec  result;
 
-  createCardManager(session->readerID);
-  EstEIDManager::KeyType key = session->IS_SIGN_SLOT ? EstEIDManager::SIGN : EstEIDManager::AUTH;
-  if (session->sigMechanism.mechanism == CKM_RSA_PKCS) {
-    result = cardm.sign(dataToSign, EstEIDManager::SSL, key, session->pin);
+  createCardManager((*session)->readerID);
+  EstEIDManager::KeyType key = (*session)->IS_SIGN_SLOT ? EstEIDManager::SIGN : EstEIDManager::AUTH;
+  if ((*session)->sigMechanism.mechanism == CKM_RSA_PKCS) {
+    result = cardm.sign(dataToSign, EstEIDManager::SSL, key, (*session)->pin);
   }
   return result;
 }
@@ -979,15 +982,15 @@ CK_DECLARE_FUNCTION (CK_RV, PKCS11Context::C_SignFinal(
   FLOG;
 
 
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
 
-  CK_BYTE_PTR pData = sess->dataToSign.size() == 0 ? NULL_PTR : &sess->dataToSign[0];
-  CK_RV result = PKCS11Context::C_Sign(hSession, pData, sess->dataToSign.size(), pSignature, pulSignatureLen);
+  CK_BYTE_PTR pData = (*sess)->dataToSign.size() == 0 ? NULL_PTR : &(*sess)->dataToSign[0];
+  CK_RV result = PKCS11Context::C_Sign(hSession, pData, (*sess)->dataToSign.size(), pSignature, pulSignatureLen);
   if (pSignature != NULL_PTR) {
-    sess->dataToSign.clear();
+    (*sess)->dataToSign.clear();
   }
   return result;
 }
@@ -1000,17 +1003,17 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_DecryptInit(CK_SESSION_HANDLE hSessi
 CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Decrypt(CK_SESSION_HANDLE hSession, CK_BYTE_PTR pEncryptedData, CK_ULONG ulEncryptedDataLen, CK_BYTE_PTR pData, CK_ULONG_PTR pulDataLen)) {
   _log("enc = %i, data = %i", ulEncryptedDataLen, *pulDataLen);
   
-  sessIter sess = find(sessions.begin(), sessions.end(), hSession);
+  sessIter sess = find_if(sessions.begin(), sessions.end(), [&](shared_ptr<PKCS11Session> &session ){ return (*session).session == hSession;});
   if (sessions.end() == sess) {
     return CKR_SESSION_HANDLE_INVALID;
   }
-  if (sess->state != CKS_RO_USER_FUNCTIONS) {
+  if ((*sess)->state != CKS_RO_USER_FUNCTIONS) {
     return CKR_USER_NOT_LOGGED_IN;
   }
   
   ByteVec cipher(pEncryptedData, pEncryptedData + ulEncryptedDataLen);
-  createCardManager(sess->readerID);
-  ByteVec decryptedData = cardm.RSADecrypt(cipher, sess->pin);
+  createCardManager((*sess)->readerID);
+  ByteVec decryptedData = cardm.RSADecrypt(cipher, (*sess)->pin);
 
   if (decryptedData.size() == 0) {
     _log("Decrypted data length invalid (0). Returning CKR_FUNCTION_FAILED");
@@ -1025,4 +1028,5 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_Decrypt(CK_SESSION_HANDLE hSession, 
   
   return CKR_OK;
 }
+
 
