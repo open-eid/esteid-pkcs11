@@ -22,12 +22,21 @@ add_subdirectory(googlemock)
 if(NOT GMOCK_ROOT)
   set(GMOCK_ROOT "googlemock")
 endif()
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}
+if(NOT GTEST_ROOT)
+  set(GTEST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/gtest)
+endif()
+
+include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}
   ${OPENSSL_INCLUDE_DIR}
   ${PCSCLITE_INCLUDE_DIR}
   ${ICONV_INCLUDE_DIR}
-  ${GMOCK_ROOT}/gtest/include ${GMOCK_ROOT}/gtest
-  ${GMOCK_ROOT}/include ${GMOCK_ROOT})
+  ${GTEST_ROOT}
+  ${GTEST_ROOT}/include
+  ${GTEST_ROOT}/include/gtest
+  ${GMOCK_ROOT}
+  ${GMOCK_ROOT}/include
+)
 add_subdirectory(smartcardpp)
 
 if(WIN32)
