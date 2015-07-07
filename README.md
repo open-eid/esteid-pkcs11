@@ -12,6 +12,12 @@
 
         sudo apt-get install cmake libpcsclite-dev libssl-dev
 
+
+ - install gcovr from [http://gcovr.com/](http://gcovr.com/) or alternatively: 
+
+
+        pip install gcovr
+
 2. Fetch the source
 
         git clone --recursive https://github.com/open-eid/esteid-pkcs11
@@ -37,8 +43,13 @@
         
 ### OSX
 
-1. Install dependencies from [http://www.cmake.org](http://www.cmake.org)
+1. Install dependencies 
 
+ - install cmake from [http://www.cmake.org](http://www.cmake.org) and gcovr from [http://gcovr.com/](http://gcovr.com/)
+ - or alternatively with homebrew use:
+
+
+        brew install cmake gcovr
 
 2. Fetch the source
 
