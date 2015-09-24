@@ -35,7 +35,6 @@ TEST(PKCS11Context, C_GetTokenInfo_CommonPart) {
   EXPECT_CALL(manager, getTokenCount(true)).WillOnce(Return(1));
   EXPECT_CALL(manager, isInReader(_)).WillOnce(Return(true));
   EXPECT_CALL(manager, isSecureConnection()).WillOnce(Return(false));
-  EXPECT_CALL(manager, isDigiID()).WillOnce(Return(true));
   EXPECT_CALL(manager, readCardName(_)).WillRepeatedly(Return("Igor Žaikovski"));
   EXPECT_CALL(manager, getRetryCounts(_, _, _)).WillOnce(DoAll(SetArgReferee<0>(3), SetArgReferee<1>(3), SetArgReferee<2>(3),Return(true)));
 
@@ -69,7 +68,6 @@ TEST(PKCS11Context, C_GetTokenInfo_PIN1_UTF8) {
   EXPECT_CALL(manager, getTokenCount(true)).WillOnce(Return(1));
   EXPECT_CALL(manager, isInReader(_)).WillOnce(Return(true));
   EXPECT_CALL(manager, isSecureConnection()).WillOnce(Return(false));
-  EXPECT_CALL(manager, isDigiID()).WillOnce(Return(true));
   EXPECT_CALL(manager, readCardName(_)).WillRepeatedly(Return("Igor Žaikovski"));
   EXPECT_CALL(manager, getRetryCounts(_, _, _)).WillOnce(DoAll(SetArgReferee<0>(3), SetArgReferee<1>(3), SetArgReferee<2>(3),Return(true)));
 
@@ -85,40 +83,7 @@ TEST(PKCS11Context, C_GetTokenInfo_PIN2_UTF8) {
   EXPECT_CALL(manager, getTokenCount(true)).WillOnce(Return(1));
   EXPECT_CALL(manager, isInReader(_)).WillOnce(Return(true));
   EXPECT_CALL(manager, isSecureConnection()).WillOnce(Return(false));
-  EXPECT_CALL(manager, isDigiID()).WillOnce(Return(true));
   EXPECT_CALL(manager, readCardName(_)).WillRepeatedly(Return("Igor Žaikovski"));
-  EXPECT_CALL(manager, getRetryCounts(_, _, _)).WillOnce(DoAll(SetArgReferee<0>(3), SetArgReferee<1>(3), SetArgReferee<2>(3),Return(true)));
-
-  PKCS11Context context(&manager);
-  CK_TOKEN_INFO pInfo;
-  ASSERT_EQ(CKR_OK, context.C_GetTokenInfo(1, &pInfo));
-  char result[33];
-  ASSERT_STREQ("Igor Žaikovski (PIN2, Sign)    ", nullTerminatedString(result, pInfo.label, 32));
-}
-
-TEST(PKCS11Context, C_GetTokenInfo_PIN1_CP1250) {
-  MockCardManager manager;
-  EXPECT_CALL(manager, getTokenCount(true)).WillOnce(Return(1));
-  EXPECT_CALL(manager, isInReader(_)).WillOnce(Return(true));
-  EXPECT_CALL(manager, isSecureConnection()).WillOnce(Return(false));
-  EXPECT_CALL(manager, isDigiID()).WillOnce(Return(false));
-  EXPECT_CALL(manager, readCardName(_)).WillRepeatedly(Return("Igor \x8E""aikovski"));
-  EXPECT_CALL(manager, getRetryCounts(_, _, _)).WillOnce(DoAll(SetArgReferee<0>(3), SetArgReferee<1>(3), SetArgReferee<2>(3),Return(true)));
-
-  PKCS11Context context(&manager);
-  CK_TOKEN_INFO pInfo;
-  ASSERT_EQ(CKR_OK, context.C_GetTokenInfo(0, &pInfo));
-  char result[33];
-  ASSERT_STREQ("Igor Žaikovski (PIN1, Auth)    ", nullTerminatedString(result, pInfo.label, 32));
-}
-
-TEST(PKCS11Context, C_GetTokenInfo_PIN2_CP1250) {
-  MockCardManager manager;
-  EXPECT_CALL(manager, getTokenCount(true)).WillOnce(Return(1));
-  EXPECT_CALL(manager, isInReader(_)).WillOnce(Return(true));
-  EXPECT_CALL(manager, isSecureConnection()).WillOnce(Return(false));
-  EXPECT_CALL(manager, isDigiID()).WillOnce(Return(false));
-  EXPECT_CALL(manager, readCardName(_)).WillRepeatedly(Return("Igor \x8E""aikovski"));
   EXPECT_CALL(manager, getRetryCounts(_, _, _)).WillOnce(DoAll(SetArgReferee<0>(3), SetArgReferee<1>(3), SetArgReferee<2>(3),Return(true)));
 
   PKCS11Context context(&manager);

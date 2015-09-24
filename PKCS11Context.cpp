@@ -362,25 +362,11 @@ CK_DECLARE_FUNCTION(CK_RV, PKCS11Context::C_GetTokenInfo(
       return CKR_DEVICE_REMOVED;
     }
 
-    FLOG
-    
-    char nameBuffer[128];
-    std::string name = "";
     std::string documentID = cardm.readDocumentID();
-    
-    cardm.readCardName();
-    if (cardm.isDigiID()) {
-      name = cardm.readCardName(TRUE);
-    }
-    else {
-      cp1250_to_utf8(nameBuffer, (char*)cardm.readCardName(TRUE).c_str());
-      name = nameBuffer;
-    }
+    _log("C_GetTokenInfo serialNumber = %s", documentID.c_str());
 
-    FLOG;
-    
-     name += IS_SIGN_SLOT ? " (PIN2, Sign)" : " (PIN1, Auth)";
-    _log("C_GetTokenInfo %s", name.c_str());
+    std::string name = cardm.readCardName(TRUE) + (IS_SIGN_SLOT ? " (PIN2, Sign)" : " (PIN1, Auth)");
+    _log("C_GetTokenInfo label = %s", name.c_str());
     
     memset(pInfo, 0, sizeof(*pInfo));
     padString(pInfo->label, sizeof(pInfo->label), name);
