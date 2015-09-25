@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include "precompiled.h"
 #include "PKCS11Context.h"
-#include "utility/EstEID_utility.h"
 #include "utility/asnCertificate.h"
 #include <map>
 #include "Logger.h"

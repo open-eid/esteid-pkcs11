@@ -7,7 +7,6 @@ include(GNUInstallDirs)
 enable_testing()
 #set(CMAKE_FIND_ROOT_PATH ${CMAKE_OSX_SYSROOT})
 
-find_package( Iconv REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 if(APPLE)
@@ -30,7 +29,6 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${OPENSSL_INCLUDE_DIR}
   ${PCSCLITE_INCLUDE_DIR}
-  ${ICONV_INCLUDE_DIR}
   ${GTEST_ROOT}
   ${GTEST_ROOT}/include
   ${GTEST_ROOT}/include/gtest
@@ -49,7 +47,6 @@ add_library(esteid-pkcs11 MODULE
     PKCS11Context.cpp
     precompiled.cpp
     Logger.cpp
-    utility/EstEID_utility.cpp
     utility/asnCertificate.cpp
     utility/asnObject.cpp
 )
@@ -61,7 +58,6 @@ add_library(esteid-pkcs11-onepin MODULE
     OnePinPKCS11Context.cpp
     precompiled.cpp
     Logger.cpp
-    utility/EstEID_utility.cpp
     utility/asnCertificate.cpp
     utility/asnObject.cpp
 )
@@ -73,7 +69,6 @@ add_executable(runUnitTests
     OnePinPKCS11Context.cpp
     precompiled.cpp
     Logger.cpp
-    utility/EstEID_utility.cpp
     utility/asnCertificate.cpp
     utility/asnObject.cpp
     unit\ tests/esteid-unit-test.cpp
@@ -104,13 +99,13 @@ if(CMAKE_COMPILER_IS_GNUCC OR __COMPILER_GNU)
 endif()
 
 set_target_properties(esteid-pkcs11 esteid-pkcs11-onepin PROPERTIES PREFIX "")
-target_link_libraries(esteid-pkcs11 smartcardpp ${OPENSSL_LIBRARIES} ${ICONV_LIBRARIES})
-target_link_libraries(esteid-pkcs11-onepin smartcardpp ${OPENSSL_LIBRARIES} ${ICONV_LIBRARIES})
+target_link_libraries(esteid-pkcs11 smartcardpp ${OPENSSL_LIBRARIES})
+target_link_libraries(esteid-pkcs11-onepin smartcardpp ${OPENSSL_LIBRARIES})
 
 set_target_properties(esteid-pkcs11-onepin PROPERTIES COMPILE_DEFINITIONS "ONE_PIN")
 
 set_target_properties(runUnitTests PROPERTIES COMPILE_DEFINITIONS "TEST_MODE")
-target_link_libraries(runUnitTests gmock gmock_main smartcardpp ${OPENSSL_LIBRARIES} ${ICONV_LIBRARIES})
+target_link_libraries(runUnitTests gmock gmock_main smartcardpp ${OPENSSL_LIBRARIES})
 
 Add_Custom_Command (TARGET runUnitTests POST_BUILD COMMAND ./runUnitTests --gtest_output=xml:test_report.xml)
 Add_Custom_Command (TARGET runUnitTests POST_BUILD COMMAND gcovr  --filter='.*/PKCS11Context.cpp|.*/Logger.cpp' -x -o coverage.xml)
