@@ -1,6 +1,7 @@
 Esteid-pkcs11 version 3.12 release notes
 --------------------------------------
 - Fixed issue with parallel sessions that caused C_Login method to fail.
+- Fixed label encoding issues in C_GetTokenInfo method.
 
 Esteid-pkcs11 version 3.10 release notes
 --------------------------------------
