@@ -113,3 +113,14 @@ execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ../../coverage)
 #Add_Custom_Command (TARGET runUnitTests POST_BUILD COMMAND gcovr  --filter='.*/PKCS11Context.cpp|.*/Logger.cpp' --html --html-details -o ../../coverage/coverage.html)
 
 install(TARGETS esteid-pkcs11 esteid-pkcs11-onepin LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+if(APPLE)
+   add_custom_target(installer
+        COMMENT "Creating installer"
+        COMMAND codesign -f -s "${SIGNCERT}" $<TARGET_FILE:esteid-pkcs11> $<TARGET_FILE:esteid-pkcs11-onepin>
+        COMMAND mkdir -p "root/${CMAKE_INSTALL_LIBDIR}"
+        COMMAND cp $<TARGET_FILE:esteid-pkcs11> $<TARGET_FILE:esteid-pkcs11-onepin> "root/${CMAKE_INSTALL_LIBDIR}"
+        COMMAND pkgbuild --root root --sign "${INSTCERT}" --version "${VERSION}$ENV{VER_SUFFIX}"
+                --identifier "ee.ria.${PROJECT_NAME}" ${PROJECT_NAME}_${VERSION}$ENV{VER_SUFFIX}.pkg
+    )
+endif()
