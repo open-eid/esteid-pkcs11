@@ -19,16 +19,16 @@ void Logger::writeLog(const char *functionName, const char *fileName, int lineNu
     return;
   }
   
-	FILE *log;
+  FILE *log;
   log = fopen(getLogFileName().c_str(), "a");
   
   string logLinePrefix = logLine(functionName, fileName, lineNumber);
   fprintf(log, "%s ", logLinePrefix.c_str());
-	va_start(args, message);
-	vfprintf(log, message.c_str(), args);
-	va_end(args);
-	fprintf(log, "\n");
-	fclose(log);
+  va_start(args, message);
+  vfprintf(log, message.c_str(), args);
+  va_end(args);
+  fprintf(log, "\n");
+  fclose(log);
   
 }
 
@@ -40,14 +40,14 @@ string Logger::logLine(const char *functionName, const char *fileName, int lineN
 
 string Logger::getLogFileName() {
 #ifdef _WIN32
-	char *tempValue = getenv("TEMP");
-	return ((tempValue == NULL ? string("c:") : string(tempValue)) + "\\esteid-pkcs11.log");
+  char *tempValue = getenv("TEMP");
+  return ((tempValue == NULL ? string("c:") : string(tempValue)) + "\\esteid-pkcs11.log");
 #elif __APPLE__
   char *env = getenv("TMPDIR");
   if (env == NULL)
-    env = (char *) "/tmp/";
-  return string(env) + "esteid-pkcs11.log";
+    env = (char *) "/tmp";
+  return string(env) + "/esteid-pkcs11.log";
 #else
-	return "/tmp/esteid-pkcs11.log";
+  return "/tmp/esteid-pkcs11.log";
 #endif
 }

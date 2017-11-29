@@ -40,7 +40,7 @@ TEST_F(LoggerTest, getLogFilenameWithEnvironmentVariable) {
   _putenv_s("TEMP", "c:\\tmp");
   ASSERT_EQ(string("c:\\tmp\\esteid-pkcs11.log"), Logger::getLogFileName());
 #elif __APPLE__
-  setenv("TMPDIR", "/test/tmp/", 1);
+  setenv("TMPDIR", "/test/tmp", 1);
   ASSERT_EQ(string("/test/tmp/esteid-pkcs11.log"), Logger::getLogFileName());
 #else
   ASSERT_EQ(string("/tmp/esteid-pkcs11.log"), Logger::getLogFileName());
