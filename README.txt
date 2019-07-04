@@ -1,1 +1,1 @@
-Contact for assistance by email abi@id.ee or http://www.id.ee
+Contact our support via www.id.ee for assistance.
